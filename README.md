@@ -5,6 +5,7 @@ Lotus を使った、1ファイルアプリケーションのサンプルです�
 Webブラウザで以下のURLにアクセスするこで、コンテンツが表示されます。
 
 * http://localhost:2300/
+* http://localhost:2300/hello
 
 # 動作環境
 

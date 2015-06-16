@@ -20,7 +20,12 @@ module ::OneFile
       class Index
         include OneFile::Action
 
+        # Viewで扱いたいデータは expose する必要がある
+        expose :time
+
         def call(params)
+          # Viewで扱いたいデータはインスタンス変数とする
+          @time = Time.now
         end
       end
     end
@@ -32,7 +37,8 @@ module ::OneFile
         include OneFile::View
 
         def render
-          'Hello World!'
+          # expose した名前でアクセスする
+          "Now: #{time}"
         end
       end
     end

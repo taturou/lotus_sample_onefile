@@ -9,6 +9,7 @@ module ::OneFile
       routes do
         get '/', to: 'home#index'
         get '/hello', to: 'home#hello', as: :hello  # このルーティング情報に :hello という名前をつける
+        get '/mynameis', to: 'home#mynameis'
       end
     end
     load!
@@ -40,6 +41,13 @@ module ::OneFile
         def call(params)
         end
       end
+
+      class Mynameis
+        include OneFile::Action
+
+        def call(params)
+        end
+      end
     end
   end
 
@@ -65,6 +73,15 @@ module ::OneFile
           # そのままだと "<p>" が "&lt;p&gt;" となるので生のHTMLであることを伝える
           _raw html
         end
+      end
+
+      class Mynameis
+        include OneFile::View
+
+        # テンプレートを指定すると、.html.erb ファイルをテンプレートとして表示する
+        # .html.erb の .html 部分はViewのFormat（デフォルトはHTML）と同じ
+        # .html.erb の .erb 部分はViewのEngine（デフォルトはERB）と同じ
+        template 'templates/home/mynameis'
       end
     end
   end

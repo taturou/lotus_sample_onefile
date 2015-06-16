@@ -1,0 +1,15 @@
+<!--
+  このファイルは ERB に掛けられる
+  <% %> で囲まれた文字は ruby プログラムとして解釈される
+  <%= %> で囲まれた文字は ruby プログラムとして解釈され、結果が出力される
+-->
+<!--
+  params はcontrollerの call メソッドに渡された引数（exposeしなくてもアクセス可能）
+  params にはクエリパラメータが入る
+  "/mynameis?name=Johann" にアクセスすると params['name'] の値は "Johann" となる
+-->
+<% if params['name'] %>
+  <h1>My name is <%= params['name'] %>.</h1>
+<% else %>
+  <h1>I have no name.</h1>
+<% end %>

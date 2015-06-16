@@ -6,6 +6,8 @@ Webブラウザで以下のURLにアクセスするこで、コンテンツが�
 
 * http://localhost:2300/
 * http://localhost:2300/hello
+* http://localhost:2300/mynameis
+* http://localhost:2300/mynameis?name=Johann
 
 # 動作環境
 
